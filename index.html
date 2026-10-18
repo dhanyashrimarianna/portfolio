@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dhanyashri Marianna · Business Analyst Intern</title>
+<title>Dhanyashri Marianna · Business Analyst</title>
 <script>document.documentElement.classList.add('js')</script>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -38,11 +38,15 @@ nav .logo{font:800 15px Unbounded,sans-serif;text-decoration:none}
 nav div{display:flex;gap:8px;align-items:center}
 .pill{border:1.5px solid var(--line);background:var(--card);backdrop-filter:blur(14px);border-radius:99px;padding:7px 15px;font:600 14px Figtree,sans-serif;color:var(--ink);text-decoration:none;cursor:pointer}
 .pill:hover{border-color:var(--a)}
-.hero{min-height:88vh;display:grid;align-content:center;padding:40px 0 60px;position:relative}
-.status{width:max-content;max-width:100%;display:flex;gap:9px;align-items:center;font-weight:600;font-size:15px}
-.status b{width:10px;height:10px;border-radius:50%;background:var(--c);animation:ping 2s infinite}
+.pill,.orb,.chip,.btn,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.mood{min-height:40px}
+.wash{position:fixed;inset:0;z-index:8;pointer-events:none;background:radial-gradient(circle at var(--wx,50%) var(--wy,85%),color-mix(in srgb,var(--a) 55%,transparent),transparent 65%);animation:wash .9s ease-out forwards}
+@keyframes wash{from{opacity:1;transform:scale(.6)}to{opacity:0;transform:scale(1.6)}}
+.hero{min-height:88vh;min-height:88svh;display:grid;grid-template-columns:minmax(0,1fr);align-content:center;padding:40px 22px 60px;position:relative}
+.status{width:fit-content;max-width:100%;display:flex;gap:9px;align-items:flex-start;line-height:1.35;font-weight:600;font-size:15px}
+.status b{flex:none;margin-top:5px;width:10px;height:10px;border-radius:50%;background:var(--c);animation:ping 2s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 var(--c)}70%,100%{box-shadow:0 0 0 12px transparent}}
-h1{font-size:clamp(42px,10.5vw,124px);font-weight:800;letter-spacing:-.035em;margin:18px 0 22px;perspective:600px}
+h1{white-space:nowrap;font-size:clamp(30px,10.5vw,124px);font-weight:800;letter-spacing:-.035em;margin:18px 0 22px;perspective:600px}
 h1 .l{display:inline-block;background:linear-gradient(100deg,var(--a),var(--b),var(--c),var(--d),var(--a));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:holo 9s linear infinite,rise .9s calc(2.1s + var(--i)*45ms) cubic-bezier(.2,1.4,.4,1) backwards;cursor:default;transition:transform .25s}
 h1 .l:hover{transform:translateY(-14px) rotate(-8deg) scale(1.15)}
 h1 br{display:block}
@@ -50,16 +54,16 @@ h1 br{display:block}
 @keyframes rise{from{opacity:0;transform:translateY(80px) rotateX(-80deg)}}
 .hero p{max-width:36ch;font-size:clamp(19px,2.6vw,25px);color:var(--soft);margin:0 0 14px}
 .hero p em{font-style:normal;color:var(--ink);font-weight:600}
-.type{min-height:1.6em;font:600 clamp(16px,2.2vw,20px) Figtree;color:var(--ink);margin:0 0 28px}
+.type{min-height:1.6em;font:600 clamp(16px,2.2vw,20px) Figtree,system-ui,sans-serif;color:var(--ink);margin:0 0 28px}
 .type::before{content:"✦ ";color:var(--a)}
 .type i{font-style:normal;border-right:2px solid var(--a);padding-right:3px}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .btn{padding:14px 24px;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .25s;position:relative;display:inline-block}
 .btn.main{background:linear-gradient(100deg,var(--a),var(--b));color:#1d0d40;border-color:transparent}
 .btn:hover{transform:translateY(-3px) rotate(-1.5deg)}
-.orb{position:absolute;right:2%;top:12%;width:clamp(110px,22vw,250px);aspect-ratio:1;border:0;padding:0;cursor:pointer;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 6%,transparent 7%),conic-gradient(from 200deg,var(--a),var(--b),var(--c),var(--d),var(--a));box-shadow:0 30px 80px -20px var(--b);animation:float 7s ease-in-out infinite;transition:transform .15s}
+.orb{z-index:3;position:absolute;right:2%;top:12%;width:clamp(110px,22vw,250px);aspect-ratio:1;border:0;padding:0;cursor:pointer;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 6%,transparent 7%),conic-gradient(from 200deg,var(--a),var(--b),var(--c),var(--d),var(--a));box-shadow:0 30px 80px -20px var(--b);animation:float 7s ease-in-out infinite;transition:transform .15s}
 .orb:active{transform:scale(.9)}
-.orb::after{content:"tap me";position:absolute;inset:auto 0 -30px;text-align:center;font:600 13px Figtree;color:var(--soft)}
+.orb::after{content:"tap me";position:absolute;inset:auto 0 -30px;text-align:center;font:600 13px Figtree,system-ui,sans-serif;color:var(--soft)}
 @keyframes float{50%{margin-top:-22px}}
 .marquee{border-block:1.5px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0;background:var(--card)}
 .marquee div{display:inline-block;animation:slide 30s linear infinite;font:800 clamp(18px,3vw,28px) Unbounded,sans-serif}
@@ -81,16 +85,17 @@ details{background:var(--card);backdrop-filter:blur(16px);border:1.5px solid var
 details[open]{border-color:var(--a);box-shadow:0 20px 60px -25px var(--a)}
 summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;font:800 clamp(17px,2.6vw,22px) Unbounded,sans-serif}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));color:#1d0d40;display:grid;place-items:center;font:600 22px Figtree;transition:transform .3s}
+summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));color:#1d0d40;display:grid;place-items:center;font:600 22px Figtree,system-ui,sans-serif;transition:transform .3s}
 details[open] summary::after{transform:rotate(135deg)}
 details ul{margin:0 0 20px;padding-left:20px;color:var(--soft)}
 details li{margin-bottom:6px}details li::marker{color:var(--a)}
 .tag{display:inline-block;margin:0 6px 16px 0;padding:4px 12px;border-radius:99px;background:#9d8cff26;font-size:13.5px;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{padding:11px 20px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font:600 17px Figtree;color:var(--ink);cursor:pointer;transition:transform .25s,background .25s}
+.chip{padding:11px 20px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);font:600 17px Figtree,system-ui,sans-serif;color:var(--ink);cursor:pointer;transition:transform .25s,background .25s}
 .chip:nth-child(4n+1):hover{background:var(--a)}.chip:nth-child(4n+2):hover{background:var(--b)}.chip:nth-child(4n+3):hover{background:var(--c)}.chip:nth-child(4n):hover{background:var(--d)}
 .chip:hover{transform:scale(1.1) rotate(-3deg);color:#1d0d40}
-.group{margin-bottom:26px}.group h3{font-size:14px;color:var(--soft);margin-bottom:12px;font-family:Figtree;font-weight:600}
+.chip:active{transform:scale(.94)}
+.group{margin-bottom:26px}.group h3{font-size:14px;color:var(--soft);margin-bottom:12px;font-family:Figtree,system-ui,sans-serif;font-weight:600}
 .edu{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
 .edu h3{font-size:18px;margin-bottom:6px}.edu p{margin:2px 0;color:var(--soft);font-size:15.5px}
 .end{text-align:center;padding:120px 0 80px}
@@ -102,38 +107,78 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
 @keyframes pop{to{transform:translate(var(--x),var(--y)) scale(0) rotate(160deg);opacity:0}}
 .js .rv{opacity:0;transform:translateY(46px) scale(.96);transition:opacity .8s,transform .8s cubic-bezier(.2,.9,.3,1)}
 .js .rv.on{opacity:1;transform:none}
-@media (max-width:640px){.orb{top:1%;opacity:.7}nav .pill.hide{display:none}}
+@media (hover:none){.chip:hover,.chip:nth-child(n):hover{transform:none;background:var(--card);color:var(--ink)}.btn:hover{transform:none}h1 .l:hover{transform:none}.pill:hover{border-color:var(--line)}.spot{display:none}}
+@media (max-width:640px){
+  .dbr{display:none}
+  body{font-size:16px}
+  nav{padding:10px 16px}
+  nav .pill.hide{display:none}
+  .wrap{padding:0 18px}
+  .hero{min-height:auto;padding:112px 18px 44px}
+  .orb{top:8px;right:2px;width:88px;opacity:.95}
+  .orb::after{inset:auto 0 -22px;font-size:12px}
+  .status{font-size:14px}
+  h1{font-size:clamp(30px,9.4vw,56px);margin:14px 0 16px}
+  .hero p{font-size:18px;max-width:none}
+  .type{font-size:15.5px;white-space:nowrap;overflow:hidden;margin-bottom:22px}
+  .cta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .cta .btn{padding:12px 6px;text-align:center;font-size:15px}
+  .cta .btn.main{grid-column:1/-1;font-size:16px;padding:15px}
+  .end .cta{grid-template-columns:1fr}
+  .marquee{padding:11px 0}
+  .marquee span{margin:0 14px}
+  section{padding:60px 0 6px}
+  h2{font-size:clamp(24px,7vw,32px)}
+  .sub{font-size:16px;margin-bottom:24px}
+  .card{padding:20px;border-radius:22px}
+  .card:nth-child(odd){border-radius:22px 22px 22px 6px}.card:nth-child(even){border-radius:22px 6px 22px 22px}
+  .big{font-size:38px}
+  details{padding:2px 18px;border-radius:22px}
+  summary{font-size:16px;padding:14px 0}
+  summary::after{width:32px;height:32px}
+  details ul{padding-left:18px;font-size:15.5px}
+  .tag{font-size:12.5px;margin-bottom:12px}
+  .chips{gap:8px}
+  .chip{padding:9px 15px;font-size:15px}
+  .group{margin-bottom:20px}
+  .end{padding:70px 0 30px}
+  .end h2{font-size:clamp(26px,7.4vw,40px)}
+  footer{padding-bottom:84px}
+  .mood{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:13px;padding:8px 14px}
+  .aura i{filter:blur(60px)}
+}
+@media (max-width:360px){.type{white-space:normal;min-height:3.3em}.cta{grid-template-columns:1fr 1fr}.cta .btn:last-child{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .rv{opacity:1;transform:none}.curtain{display:none}}
 </style>
 </head>
 <body>
 <div class="bar" id="bar"></div>
-<div class="curtain" aria-hidden="true"><span>hi, i'm dhanyashri ✦</span></div>
+<div class="curtain" aria-hidden="true"><span>Hi, I’m Dhanyashri ✦</span></div>
 <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="spot" aria-hidden="true"></div>
 <nav>
-  <a class="logo" href="#top">dhanyashri ✦</a>
+  <a class="logo" href="#top">Dhanyashri ✦</a>
   <div>
-    <a class="pill hide" href="#work">work</a>
-    <a class="pill hide" href="#projects">projects</a>
-    <a class="pill hide" href="#stack">stack</a>
+    <a class="pill hide" href="#work">Work</a>
+    <a class="pill hide" href="#projects">Projects</a>
+    <a class="pill hide" href="#stack">Toolkit</a>
     <button class="pill" id="theme" aria-label="Switch between day and night mode">☾ / ☀</button>
   </div>
 </nav>
-<button class="pill mood" id="mood" aria-label="Change color mood">mood: dreamy ✦</button>
+<button class="pill mood" id="mood" aria-label="Change color mood">Mood: dreamy ✦</button>
 
 <main id="top">
 <div class="wrap hero">
   <button class="orb" id="orb" aria-label="Change color mood"></button>
-  <div class="status"><b></b>open to business analyst internships</div>
+  <div class="status"><b></b>Open to full-time business analyst &amp; data analyst roles</div>
   <h1 id="name" aria-label="Dhanyashri Marianna">Dhanyashri<br>Marianna</h1>
-  <p>Data science grad student at Stony Brook and your next <em>business analyst intern</em>.</p>
+  <p>I turn messy data into decisions. I’m finishing my master’s in Data Science at Stony Brook (graduating May 2027), and I’m looking for a full-time <em>business analyst</em> or data analyst role.</p>
   <div class="type" aria-live="off"><i id="type"></i></div>
   <div class="cta">
     <a class="btn main" href="mailto:dhanyashrimarianna@gmail.com">Say hi</a>
     <a class="btn" href="https://www.linkedin.com/in/dhanyashrimarianna/">LinkedIn</a>
     <a class="btn" href="https://github.com/dhanyashrimarianna">GitHub</a>
-    <a class="btn" href="https://cdn.gamma.app/lydjs0r7r0e460i/235c49181f0d41a7ab629902529fdb45/file/DHANYASHRI-MARIANNA-RESUME.pdf">Resume</a>
+    <a class="btn" id="resume" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
   </div>
 </div>
 
@@ -143,74 +188,77 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
 
 <div class="wrap">
 <section id="work">
-  <h2 class="rv">Where I've made things better</h2>
-  <p class="sub rv">Business Research Intern at AGR Knowledge Services, Mumbai (Oct 2024 – Jan 2025). Competitor research for WeWork in the coworking space.</p>
+  <h2 class="rv">What I’ve actually done</h2>
+  <p class="sub rv">I was a business analyst intern at AGR Knowledge Services (Avalon Consulting India) from October 2024 to January 2025, building dashboards and doing research for clients like WeWork, Bajaj, and Maersk.</p>
   <div class="grid">
-    <div class="card rv"><div class="big"><span class="num" data-to="30">30</span>%</div><p>Faster decisions after analysing 10K+ data points in Python and SQL.</p></div>
-    <div class="card rv"><div class="big"><span class="num" data-to="30">30</span>%</div><p>Faster client reporting with automated Power BI KPI dashboards.</p></div>
-    <div class="card rv"><div class="big"><span class="num" data-to="10">10</span>%</div><p>Better data retrieval from structured databases built in SQL and Excel.</p></div>
-    <div class="card rv"><div class="big"><span class="num" data-to="10">10</span>%</div><p>Smoother workflows through teamwork on BI and analytics delivery.</p></div>
+    <div class="card rv"><div class="big"><span class="num" data-to="30">30</span>%</div><p>Faster decision-support analysis. I collected, cleaned, and analyzed 10K+ data points using Python, SQL, and Excel.</p></div>
+    <div class="card rv"><div class="big"><span class="num" data-to="30">30</span>%</div><p>Faster reporting, thanks to automated Power BI dashboards that tracked KPIs, competitors, and market trends.</p></div>
+    <div class="card rv"><div class="big"><span class="num" data-to="10">10</span>%</div><p>Better data retrieval, from the SQL reporting workflows and datasets I built and maintained.</p></div>
+    <div class="card rv"><div class="big"><span class="num" data-to="3">3</span></div><p>Big-name clients I built dashboards for: WeWork, Bajaj, and Maersk.</p></div>
   </div>
-  <p class="sub rv" style="margin-top:26px">Beyond the numbers: tracked competitors' strategies and offerings, gathered data through interviews, surveys and market observation, and wrote the reports that fed WeWork's strategy and positioning.</p>
+  <p class="sub rv" style="margin-top:26px">I also dug into competitor, pricing, positioning, and market moves. Then I turned it all into short reports and recommendations that leadership used for strategy and planning.</p>
 </section>
 
 <section id="projects">
-  <h2 class="rv">Projects, tap to open</h2>
-  <p class="sub rv">Two end-to-end builds: synthetic data, analysis, models and dashboards.</p>
+  <h2 class="rv">Projects (tap to open)</h2>
+  <p class="sub rv">Two projects, start to finish: requirements, SQL, models, and dashboards.</p>
   <details class="rv">
-    <summary>Coworking market analysis &amp; churn prediction</summary>
-    <span class="tag">Power BI</span><span class="tag">Predictive modeling</span><span class="tag">Team project</span>
+    <summary>Olist: growth &amp; retention</summary>
+    <span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">statsmodels</span><span class="tag">Git</span>
     <ul>
-      <li>Built a simulated dataset covering pricing, amenities, satisfaction and usage.</li>
-      <li>Made an interactive Power BI dashboard on acquisition, retention and churn.</li>
-      <li>Used predictive modeling to find what drives churn and how to retain members.</li>
-      <li>Worked with peers to turn results into clear business recommendations.</li>
+      <li>This was a simulated BA engagement using public Olist e-commerce data (99K orders). The problem was low retention, so I wrote a stakeholder map with RACI, a BRD (9 KPIs, 13 requirements), and 12 user stories.</li>
+      <li>I built a PostgreSQL star schema with 11 data-quality checks. Along the way, I caught that customer_id is unique per order, which would have shown a 0% repeat rate, so I rebuilt the customer logic on customer_unique_id.</li>
+      <li>Only 3.0% of 93K customers ever reordered. Late deliveries averaged 2.27 review stars, compared to 4.29 for on-time ones.</li>
+      <li>I tested whether a late first delivery lowers the return rate (0.92% vs. 1.25%, p = 0.027). Category varied even more (0.80% to 1.75%), so I re-scoped the recommendation.</li>
+      <li>I ranked four features with RICE, wrote a PRD for the top pick, and designed an A/B test (about 9,100 customers per group to detect a +0.5 point lift in 90-day repeat rate).</li>
+      <li><a href="https://github.com/dhanyashrimarianna/olist-growth-analytics" target="_blank" rel="noopener">See the code on GitHub ↗</a></li>
     </ul>
   </details>
   <details class="rv">
-    <summary>PayNext: payment success analytics</summary>
+    <summary>PayNext: why payments fail</summary>
     <span class="tag">Random Forest</span><span class="tag">Power BI</span><span class="tag">Matplotlib</span>
     <ul>
-      <li>Generated <b class="num" data-to="50000" data-plus="1">50,000</b>+ synthetic transactions to simulate a payment monitoring system.</li>
-      <li>Ran EDA to find failure patterns by payment method, bank or gateway, device and region.</li>
-      <li>Trained a Random Forest model with 85% accuracy at predicting transaction success.</li>
-      <li>Built Power BI and Matplotlib dashboards to track trends.</li>
-      <li>Recommended retry logic and gateway optimization to improve reliability and revenue.</li>
+      <li>I generated a synthetic dataset of <b class="num" data-to="50000" data-plus="1">50,000</b>+ payment transactions to mimic a real payment system.</li>
+      <li>EDA and feature engineering (retry count, gateway latency, payment method, device, and geography) helped me figure out what’s behind failed transactions.</li>
+      <li>My Random Forest model (scikit-learn) predicts transaction success with 85% accuracy, and I used its outputs to simulate smarter routing.</li>
+      <li>I built Power BI and Matplotlib dashboards for success rate, failure reasons, and gateway performance.</li>
+      <li>My recommendation: smarter retry logic and gateway optimization, for better reliability and revenue.</li>
     </ul>
   </details>
 </section>
 
 <section id="stack">
-  <h2 class="rv">The toolkit</h2>
+  <h2 class="rv">Toolkit</h2>
   <p class="sub rv">Tap a chip. Something happens.</p>
-  <div class="group rv"><h3>Programming</h3><div class="chips"><button class="chip">Python</button><button class="chip">SQL</button><button class="chip">R</button></div></div>
-  <div class="group rv"><h3>Analytics &amp; ML</h3><div class="chips"><button class="chip">Pandas</button><button class="chip">NumPy</button><button class="chip">Scikit-learn</button><button class="chip">Matplotlib</button><button class="chip">Jupyter</button></div></div>
-  <div class="group rv"><h3>Visualization</h3><div class="chips"><button class="chip">Power BI</button><button class="chip">Tableau</button><button class="chip">Excel pivots</button><button class="chip">Power Query</button></div></div>
-  <div class="group rv"><h3>Databases</h3><div class="chips"><button class="chip">MySQL</button><button class="chip">PostgreSQL</button></div></div>
+  <div class="group rv"><h3>Programming &amp; querying</h3><div class="chips"><button class="chip">Python</button><button class="chip">SQL</button><button class="chip">R</button></div></div>
+  <div class="group rv"><h3>Business analysis</h3><div class="chips"><button class="chip">BRD</button><button class="chip">User stories</button><button class="chip">Acceptance criteria</button><button class="chip">RACI</button><button class="chip">KPI definition</button><button class="chip">RICE</button><button class="chip">PRD</button><button class="chip">Roadmapping</button><button class="chip">A/B test design</button></div></div>
+  <div class="group rv"><h3>Analytics &amp; ML</h3><div class="chips"><button class="chip">Pandas</button><button class="chip">NumPy</button><button class="chip">Statsmodels</button><button class="chip">Scikit-learn</button><button class="chip">Cohort &amp; funnel analysis</button><button class="chip">Hypothesis testing</button><button class="chip">EDA</button><button class="chip">Random Forest</button><button class="chip">Logistic Regression</button></div></div>
+  <div class="group rv"><h3>BI &amp; visualization</h3><div class="chips"><button class="chip">Power BI</button><button class="chip">Tableau</button><button class="chip">Matplotlib</button><button class="chip">Excel pivots</button><button class="chip">Power Query</button><button class="chip">XLOOKUP</button></div></div>
+  <div class="group rv"><h3>Databases &amp; tools</h3><div class="chips"><button class="chip">PostgreSQL</button><button class="chip">MySQL</button><button class="chip">Star schema</button><button class="chip">Git</button><button class="chip">Jupyter</button><button class="chip">Google Colab</button><button class="chip">VS Code</button><button class="chip">RStudio</button></div></div>
 </section>
 
 <section>
   <h2 class="rv">Off the spreadsheet</h2>
-  <p class="sub rv">I led a dance club of <b class="num" data-to="100" data-plus="1">100</b>+ members through annual fests and big events, working with professional choreographers on trophy-winning performances.</p>
+  <p class="sub rv">I led a dance club of <b class="num" data-to="100" data-plus="1">100</b>+ members through annual fests and big shows. We worked with professional choreographers and won trophies along the way.</p>
   <div class="grid">
-    <div class="card rv"><h3 style="font-size:17px">Big-crew energy</h3><p>Ran logistics for large events with 100+ people on stage and behind it.</p></div>
-    <div class="card rv"><h3 style="font-size:17px">Budget brain</h3><p>Managed club finances and stretched resources for maximum creative impact.</p></div>
-    <div class="card rv"><h3 style="font-size:17px">Data for community</h3><p>Uses data to spot trends and shape how the club reaches people.</p></div>
-    <div class="card rv"><h3 style="font-size:17px">Everyone's heard</h3><p>Built a caring, inclusive culture across ages and backgrounds.</p></div>
+    <div class="card rv"><h3 style="font-size:17px">Logistics</h3><p>I ran events with 100+ people on stage and behind it.</p></div>
+    <div class="card rv"><h3 style="font-size:17px">Budgets</h3><p>I managed the club’s money and made it go further.</p></div>
+    <div class="card rv"><h3 style="font-size:17px">Data, even here</h3><p>I used data to spot trends and decide how we reach people.</p></div>
+    <div class="card rv"><h3 style="font-size:17px">Inclusion</h3><p>I built a club where every age and background felt included.</p></div>
   </div>
 </section>
 
 <section>
-  <h2 class="rv">School era</h2>
+  <h2 class="rv">School</h2>
   <div class="edu" style="margin-top:26px">
-    <div class="card rv"><h3>Stony Brook University</h3><p>M.S. Data Science · Aug 2025 – Aug 2027</p><p>Data Analysis &amp; Statistical Modeling, Probability &amp; Forecasting, Big Data Analytics</p></div>
-    <div class="card rv"><h3>Bengaluru North University</h3><p>BCA · GPA 3.64/4</p><p>Python, SQL, Software Engineering, Data Science</p></div>
+    <div class="card rv"><h3>Stony Brook University</h3><p>M.S. Data Science · expected May 2027</p><p>Data Analysis &amp; Statistical Modeling, Statistical Learning, Probability, Big Data Analytics</p></div>
+    <div class="card rv"><h3>Bengaluru North University</h3><p>BCA · Sept 2024 · GPA 3.64/4</p><p>Python, SQL, Database Management Systems, Software Engineering, Data Science, R Programming</p></div>
   </div>
 </section>
 
 <div class="end">
-  <h2 class="rv">Let's make something<br>data-driven &amp; a little magical.</h2>
-  <p class="sub rv" style="margin-inline:auto">Business analyst internships, or a good chat about churn.</p>
+  <h2 class="rv">Want an analyst who gets<br class="dbr"> excited about retention?</h2>
+  <p class="sub rv" style="margin-inline:auto">I’m open to full-time roles, so let’s talk.</p>
   <div class="cta rv">
     <a class="btn main" href="mailto:dhanyashrimarianna@gmail.com">Email me</a>
     <a class="btn" href="https://www.linkedin.com/in/dhanyashrimarianna/">Connect on LinkedIn</a>
@@ -218,16 +266,18 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
 </div>
 </div>
 </main>
-<footer>Stony Brook, New York ✦ made with love and a lot of gradients</footer>
+<footer>Stony Brook, New York ✦</footer>
 
 <script>
 (function(){
   var r=document.documentElement,$=function(i){return document.getElementById(i)};
   var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  $('theme').onclick=function(){var t=r.getAttribute('data-theme'),d=t?t==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark')};
+  $('theme').onclick=function(){var t=r.getAttribute('data-theme'),d=t?t==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');if(typeof bars==='function')bars()};
   var moods=['dreamy','sunset','ocean','orchid'],mi=0;
-  function mood(){mi=(mi+1)%4;r.setAttribute('data-mood',moods[mi]);$('mood').textContent='mood: '+moods[mi]+' ✦'}
-  $('mood').onclick=mood;$('orb').onclick=mood;
+  function bars(){var m=document.querySelector('meta[name=theme-color]');if(!m){m=document.createElement('meta');m.name='theme-color';document.head.appendChild(m)}setTimeout(function(){m.content=getComputedStyle(r).getPropertyValue('--bg').trim()||'#fff4fb'},60)}
+  function mood(ev){mi=(mi+1)%4;r.setAttribute('data-mood',moods[mi]);$('mood').textContent='Mood: '+moods[mi]+' ✦';bars();
+    if(!rm){var w=document.createElement('div');w.className='wash';w.setAttribute('aria-hidden','true');var x=ev&&ev.clientX?ev.clientX:innerWidth-60,y=ev&&ev.clientY?ev.clientY:innerHeight-40;w.style.setProperty('--wx',x+'px');w.style.setProperty('--wy',y+'px');document.body.appendChild(w);setTimeout(function(){w.remove()},950)}}
+  $('mood').addEventListener('click',mood);$('orb').addEventListener('click',mood);bars();
   var n=$('name'),html='',i=0;
   n.innerHTML=n.innerHTML.split('<br>').map(function(w){return w.split('').map(function(c){return '<span class="l" aria-hidden="true" style="--i:'+(i++)+'">'+c+'</span>'}).join('')}).join('<br>');
   var bar=$('bar');
@@ -243,7 +293,7 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
     var dn=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.num').forEach(count);dn.unobserve(e.target)}})});
     document.querySelectorAll('details').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)d.querySelectorAll('.num').forEach(count)})});
   }else document.querySelectorAll('.rv').forEach(function(el){el.classList.add('on')});
-  var lines=['dashboards people actually open','models that spot churn early','reports that shape strategy','dance fests for 100+ people'],li=0,ci=0,del=false,ty=$('type');
+  var lines=['Dashboards people actually open','Taking projects from BRD to A/B test','Digging into retention with SQL','Dance fests for 100+ people'],li=0,ci=0,del=false,ty=$('type');
   function tick(){
     var s=lines[li];
     if(rm){ty.textContent=s;return}
@@ -263,12 +313,20 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
   }
   addEventListener('pointermove',function(e){
     r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');
-    if(rm)return;var t=Date.now();if(t-last>60){last=t;spark(e.clientX,e.clientY,false)}
+    if(rm||e.pointerType==='touch')return;var t=Date.now();if(t-last>60){last=t;spark(e.clientX,e.clientY,false)}
   });
   addEventListener('pointerdown',function(e){if(rm)return;for(var k=0;k<12;k++)spark(e.clientX,e.clientY,true)});
   if(!rm&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.card').forEach(function(c){
     c.addEventListener('pointermove',function(e){var b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;c.style.transform='perspective(700px) rotateY('+x*14+'deg) rotateX('+-y*14+'deg) translateY(-4px)'});
     c.addEventListener('pointerleave',function(){c.style.transform=''});
+  });
+  var RES='JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDkgMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9UaW1lcy1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9UaW1lcy1Sb21hbiAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9BIDw8Ci9TIC9VUkkgL1R5cGUgL0FjdGlvbiAvVVJJIChtYWlsdG86ZGhhbnlhc2hyaW1hcmlhbm5hQGdtYWlsLmNvbSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyAxNjMuMDE3IDczMi40IDI4Mi41MzcgNzQzLjIgXSAvU3VidHlwZSAvTGluayAvVHlwZSAvQW5ub3QKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0EgPDwKL1MgL1VSSSAvVHlwZSAvQWN0aW9uIC9VUkkgKGh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9pbi9kaGFueWFzaHJpbWFyaWFubmEvKQo+PiAvQm9yZGVyIFsgMCAwIDAgXSAvUmVjdCBbIDM2My4yMDQgNzMyLjQgMzk2LjE5OCA3NDMuMiBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKNyAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly9naXRodWIuY29tL2RoYW55YXNocmltYXJpYW5uYSkKPj4gL0JvcmRlciBbIDAgMCAwIF0gL1JlY3QgWyA0MDIuNDk4IDczMi40IDQyOS40OTggNzQzLjIgXSAvU3VidHlwZSAvTGluayAvVHlwZSAvQW5ub3QKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0EgPDwKL1MgL1VSSSAvVHlwZSAvQWN0aW9uIC9VUkkgKGh0dHBzOi8vZGhhbnlhc2hyaW1hcmlhbm5hLmdpdGh1Yi5pby9wb3J0Zm9saW8vKQo+PiAvQm9yZGVyIFsgMCAwIDAgXSAvUmVjdCBbIDQzNS43OTggNzMyLjQgNTQzLjI4NSA3NDMuMiBdIC9TdWJ0eXBlIC9MaW5rIC9UeXBlIC9Bbm5vdAo+PgplbmRvYmoKOSAwIG9iago8PAovQmFzZUZvbnQgL1RpbWVzLUl0YWxpYyAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagoxMCAwIG9iago8PAovQSA8PAovUyAvVVJJIC9UeXBlIC9BY3Rpb24gL1VSSSAoaHR0cHM6Ly9naXRodWIuY29tL2RoYW55YXNocmltYXJpYW5uYS9vbGlzdC1ncm93dGgtYW5hbHl0aWNzKQo+PiAvQm9yZGVyIFsgMCAwIDAgXSAvUmVjdCBbIDM2IDQ0MS45NSAzMDIuOTcgNDUzLjk1IF0gL1N1YnR5cGUgL0xpbmsgL1R5cGUgL0Fubm90Cj4+CmVuZG9iagoxMSAwIG9iago8PAovQW5ub3RzIFsgNSAwIFIgNiAwIFIgNyAwIFIgOCAwIFIgMTAgMCBSIF0gL0NvbnRlbnRzIDE1IDAgUiAvTWVkaWFCb3ggWyAwIDAgNjEyIDc5MiBdIC9QYXJlbnQgMTQgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIAogIC9UcmFucyA8PAoKPj4gL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjEyIDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgMTQgMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iagoxMyAwIG9iago8PAovQXV0aG9yIChcKGFub255bW91c1wpKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYxMDAxMjI1MDEyKzAwJzAwJykgL0NyZWF0b3IgKFwodW5zcGVjaWZpZWRcKSkgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYxMDAxMjI1MDEyKzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKFwodW5zcGVjaWZpZWRcKSkgL1RpdGxlIChcKGFub255bW91c1wpKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjE0IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgMTEgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxNSAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAzNTMxCj4+CnN0cmVhbQpHYXVgVkNLJnRZKEInaDNFUEViZjJSXGBhaiUjdVRDM2JMVjVUaHRRUkI8MnVYLSkrWiYkZkE5OS9yTjMrMj91Xjk8dWRaQTxSSE8kOD5BWSsvZEZKcFk2TkpIMi1zdGNYOU1URz1nUVhJLkgkNjM/Yy9sbEkrY0MqRj9KVHI1KCpqRydfWyxtXjFcXU5pU2JiUlNJNUo2LDJbbTpYQEVhUyxBbEZCPkQ0VV1sJ248JTwyMiJVb2Y5O0xtUSEmO0ZRcC5TT2tXNDFRYS4hYTVTc15yXmlJVlRdWHJBUilETEJYXFliQS9na1toSSwrJmI0NzZQN2s4QSpObGQxX0A8NmdyQGBnTWpSWyRQTlVlIkA2TzdgNTVQVVZGcHJANFNFKzNBOU9nWU5dO2pXIm5PLENPckAkSShKI01GOWJtTldSRGFTViNAPEc7XGUzMm4yUlFoXSs3Q11xX2MuJkY3SzY7WGY5SFRxL28/cCRCazdbbU5MIV8sKEFdcDcvVyc0VGwnPXVfZjA4b2kmX15IWGIwRkhdOWdTJCszSlJGKm0vRERHTUg8JnJYTE4hbzZpb1xkRiFtKUlbSlNaTyswWVZeOyMqMEBCXHNpOiplIkpjU0RESE8rMzFoP1U7QS8jUERyMjpVLktyV0RWQD5kRkVARGg6PC11SWEoRVNbPzo9JzxrJSlgKkhHL0w9RHEvdXJVQm85MFRAMC06Tm1oTzFMVyYsUCtMI1s6YmlNK1dMKy9gLUhhKS1ydGhjZjgqdFoqRy1BakxuNE9zWDlTUUFwLSsxRjBJdF5xKmZnYEBGbTBdcyNcREpuUl5lSjdWckszJyJYYlxkZWY2TSxsNkRsYlxoOmQnXyZNOHR0b1NVWVZhSFhlRys8aWtxVG87cjVENi4jK1BwMjRUZVZkQzZNZWEmWUAxQ3BoZG9wQnRDKiNrWENacCZpJ0c1W0lTcitwbEY4RFFZRCJfQTZfSl1yaEldKHVkaiNDIXFPZyFac1xBLWs5MUldM1EjXEdqPzJCTVNiNE5UVEFHKj0yZzdWPj82ayFxZ2xtZ1dMPS5OSEdgYVonXj8vIkdvITJyYD40PUIyIUdVUEltZkBbWUpfJSZTTTpELS5pZCRSNjdZWidgXEU3LSFlTWF0WWhnVGRTTVtVbGw1SldKW05HRChPMG9VZDY1Y05HMG0pRjU1UTg+QyhhSjtfM0VAKnJHIVdFLS1MJkBLMTw8P290TGlHTkNSKi5tKk9CNig4ZllDSjpFcSknLWJqQilEYFRbYiZFTCxvUCMyYSRtUlMiMFZBQmsuYydoQiVHXlMsM0kwWW46UCxbJz5NLkwsPENcUywqTG5hZFRFQlUuWmhacEllUWwyM1gzVzdQPU86USlMYjEpW2cwJStyYVR0TV09L0EoUixAblYjakIqaF0tNWNsPkQ5a1hoZmxVRVNOZXJET0Y9JWxqR2pCMGxSOSZBXDNXRCs3RWNpQSo5JW9acVs6TyFwSjBSQWE+JzYhJ2tgN2hPRD04PkxfUGFKazdqZyVMNyMhaUZvQzckJV9pLSVDNjRsM1dQN0kwZmhAUSNVXlRuUFteXUlqckJZJUxDYi9fQzZRJTlTal9eR0s4V14uMk4mV1wlMDwrIUZnYFhbJ1o4NmxPLGtsPG9AP3UyOWtDUiFhS2pHbVdsbD8wajFWOzNeJTFRbTtaO15yY0ZFMkAwIUNdX0ZhQHAwZDQhTWJxWGdKW3UiajJCOFJBJGFBbl5JXjkqU15pRy9WcnRaOz5hYCElX1tWUSY6XVIlKWYmOUEkMDY2YThuRkBwZ2J0RStUdUIya0EhLSRyWFlNYyM/Tm0+LHIzU1NKN1NRMWchWSNcT2h0UmtcQzJ1S0ZDSjNabzIyVXRCZlojNzJvKVBnWic1IkEvUkFrOFIxLShWJldmWyQjUCo6YS5XRzlPR3B0ZVszVVZhPTBTalAzUTtiaDpSPnEuVFYtKTQiKlhhK04uI1dGJzQsSXRvSG9WYWlySVZOMzEnSEVSYllmPTBXLSloNWZgX0o/YStAPT9QWihiVEhZJkBVYzAxNTFFMTxVTl5DRDg7OjcpX2hmJFxbWzM3RFImVD9kJ0ZLISlMcWc7czprLktFQDI6RFs5KURWVHIuTTNLQzQvakBrbmAlUzs+Iih1N0NkLURcPzBwRHM+KzheRD9xYSJyXCJoXU04bk5dMyFKKW1rQFc8VmdtTklhdUA5U2RhNTprSS5xJkRxYXNOUys/blA4azVqZV51aUQrT2JCX2ludUlaLy9cT2dNKi1YVTAuUDleI1JsRlUvVytsRUk9ZEdHYWdZOV4zIjwpLjc1SixTITREXShSTE1fcEhNazszSl9JWywzTzYiNTNDdU1qdXAyQzNoVUxaTkEybmJNOWAxNyg1XD0yVEMoJUp1bj4pIjdFUixsa3QkLTQ4QFJoaS9rai5DSlVDMjVkaytlOkJmWT9vXThhOG1XV1ZVRD9ZK3RvNyRHXWs/YkVtaTFCXHFFWnJXVTBNdGwzb2BoPU8vPEhdPSpHMUFnTkQxWWM8NEgmOzdUXjxXbidhNlF0VzJCcCVbU2lcZ2VIT1lcIVkxPDwzVyRTW04vXURLV0YsMip0Vlwta1puMFdjdSZTWFFYXWZeIjF1O2hESF5QJVktNkU9W3NNNVxWTkhWMVZhYDRZKmQ3VGZdWVlJcj4hV0Bna19XUShUYiMkYiRcZ2ZaSU1TaUw2QltfLk83Mjdfb1BwPWJWaCs3LGBTUScsXnM2TzhxVEhVSSdRUmIlKCopUV4lIU0mIU9AZE1qWG9hJ3Ficio3ajYtcS9jPTlxMDZtQVUmWVxEJElCYltsUFopakVCM1koaTRlPGlFWWVBUzNEQm9ZJik8cFM4aStxUm4tWz9dPDBiKmM2ckZKRHFcJl1iZTAsWj86U3NEVGEpZ0g7MkthWytSPUVhbF1lSC9YUVhpJkZVS247VV8oP2BQNj0jZE9wUFFOVTYiWnFKZ1ZVVExrcWZxPSphYkFRIjZbVjRhKXNYbGM2T19JVGNhRl1ocyFOcCY7QXVGbkBPPkxuO0BcIlppJ2FDUUpJOUdSckBnVVUoPV1YaC1sQ2teLTs3WmsiR3VXJDA2PGc+LXNQbV4sZj8nKWQtSWxJTDYzVWI/PkoyQjhba1FjSV1MMFImZi02JD1lUTNERHRnR0FzJD9hdSQmdFdzT2VGSkRcUEF1TEdfIUlvW2UjWCY/WENFYE9POktgPWdvaWUmM1NeRSQkN0BNbz00YFRGUz90WiZAcCJmMHFHNCE2J1Q3XCg5MDtTaEVRKzo9TjUxR1xAQUpyPmJmYSkkVjJncTA0Jy4qJzF1NUM7WyxLdV8uZSs/TnNiKT5KZHFQKFUxKHQ2XUYrNkZqXVBociFWMW1VJU07Vj9iTSFtRyRhQmpcNztBIlU9bkMhVUwxNDplUWBKYC07Jyd1XjAqQmJdbSU1b0tkW2JMQTgwKDY3azZeLUNyVC5fX0M/OzJSVElmSTEkbSw2Zl5MVUVMVD9ROENIVUE5XW4rPDNEOTFMYidXRCtuO1lrVj0sPVswMG1tPEIpZG9BMztBKzlTTV8pbTM+c2NKK2loUTVndDRnPFRwN2ZmPj48SyMhLyIvbj9HclNscF1DKGk0Y1pCOyVUXFs0NVAsIVRvSVYlRzsuOVRCK28yYWVzczpDXkZHUEBNT18wbDc9XFMldGpiQDFXO2ZNQzE5IjMuY1EhMmJjNl4nbzxTPCNFNUA6REsubklZSmstYHJmZlM8aiheSz1xQV4tJDwxOlYtUUpmMVJoQ3NsX1MtK2ZVLidyWT1PXS4rXHVedCYxZW9jJEVZInBdQT1NQ3JbJS8kTy9mLStTKnJWUWReREAtQEBUKV4wI1ovQy5hcjVnZkg4WEs7cz1XaFU+UnBsUWtiYzZAQzo1QydPLEFKKjU1YVY9KWwhIiI7PjNSS0AmPVxKViszKSFVQEo6NVM4YmEjaSVRRkREJE9rb2ktSEdAJWcsVEE3PEonYFpOY21NS0BuWFwsJWpTOEBoQHEiWzZIS0ZKUURsW1tQXjsmWSpvQV5iJEg3XStnckt0SkhpOGBSJHFXMUlqZVcxQGUsNVteXmZXIWE/bCQ+WWFvJTVCJmtPP2tHSE1aSXNLNilGP09NNWY0RFZraDJpYUVtPXBMZkB1VipVYGByIyEnOlVIdU1tZFVVJD80bVhdO1dvUTAtM2QoIzcyJVFrbUthby1FTTJJU2lVN0I3U1ZII1dgXD00OXNqQEcySm1lVVlNOVsuYT4+XT1LXlY+XW1KJVFqcDsuZkkmVFpkVC8mJSJvRiFyLmZaS1ojam5YV3RNbG9DKDhtQGNNSkBGLGNsNkVFZUFnSC1KQkx0KTdwZyExby1IQl1sVWBcNj1mSzZkbV1zX1cqYFNEQ3RDTVA2KVROMUlYYiE4TSlyaGFadSNyZnMhRG5WTWRGZUxiJkRkazJYOkM2JElybjwscCsoYF1NWy5cTC0lOys/X01AW2sqYzhlcFEsaU4jNXJPZklYXmtQSm5cLkQmYFk4ci5aWyhZL1QqUUdRRjMiSCJGOiMjWz5ySHU5M1tzNlMxWC0zMGl0XGs9M1ttK2s9QjFYYTAuTChyJyFvQiktPFkpPiMtQXJOL2UjbnMjLmxwT1BfQEVaVE1Ma0IyI1FTSExZQDFZZ15ufj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEyMiAwMDAwMCBuIAowMDAwMDAwMjI5IDAwMDAwIG4gCjAwMDAwMDAzMzcgMDAwMDAgbiAKMDAwMDAwMDQ0NiAwMDAwMCBuIAowMDAwMDAwNjI1IDAwMDAwIG4gCjAwMDAwMDA4MTYgMDAwMDAgbiAKMDAwMDAwMDk5NyAwMDAwMCBuIAowMDAwMDAxMTg4IDAwMDAwIG4gCjAwMDAwMDEyOTggMDAwMDAgbiAKMDAwMDAwMTQ5OSAwMDAwMCBuIAowMDAwMDAxNzM4IDAwMDAwIG4gCjAwMDAwMDE4MDggMDAwMDAgbiAKMDAwMDAwMjA4OSAwMDAwMCBuIAowMDAwMDAyMTUwIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPGY4NDdhOTA4MDY2NTI5MjQ0MjQyZTY1YzQwOGNmM2UxPjxmODQ3YTkwODA2NjUyOTI0NDI0MmU2NWM0MDhjZjNlMT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gMTMgMCBSCi9Sb290IDEyIDAgUgovU2l6ZSAxNgo+PgpzdGFydHhyZWYKNTc3MwolJUVPRgo=';
+  $('resume').addEventListener('click',function(e){
+    e.preventDefault();
+    try{var bin=atob(RES),u=new Uint8Array(bin.length);for(var k=0;k<bin.length;k++)u[k]=bin.charCodeAt(k);
+      var url=URL.createObjectURL(new Blob([u],{type:'application/pdf'}));
+      var w=window.open(url,'_blank');if(!w)location.href=url;
+    }catch(err){location.href='resume.pdf'}
   });
 })();
 </script>
