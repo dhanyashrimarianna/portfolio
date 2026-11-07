@@ -66,9 +66,9 @@ h1 br{display:block}
 .btn{padding:14px 24px;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .25s;position:relative;display:inline-block}
 .btn.main{background:linear-gradient(100deg,var(--a),var(--b));color:#1d0d40;border-color:transparent}
 .btn:hover{transform:translateY(-3px) rotate(-1.5deg)}
-.orb{z-index:3;position:absolute;right:2%;top:12%;width:clamp(110px,22vw,250px);aspect-ratio:1;border:0;padding:0;cursor:pointer;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 6%,transparent 7%),conic-gradient(from 200deg,var(--a),var(--b),var(--c),var(--d),var(--a));box-shadow:0 30px 80px -20px var(--b);animation:float 7s ease-in-out infinite;transition:transform .15s}
+.orb{z-index:3;position:absolute;right:0;top:auto;bottom:10%;width:clamp(64px,7vw,96px);opacity:.9;aspect-ratio:1;border:0;padding:0;cursor:pointer;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 6%,transparent 7%),conic-gradient(from 200deg,var(--a),var(--b),var(--c),var(--d),var(--a));box-shadow:0 30px 80px -20px var(--b);animation:float 7s ease-in-out infinite;transition:transform .15s}
 .orb:active{transform:scale(.9)}
-.orb::after{content:"tap me";position:absolute;inset:auto 0 -30px;text-align:center;font:600 13px Figtree,system-ui,sans-serif;color:var(--soft)}
+.orb::after{content:"tap me";position:absolute;inset:auto 0 -24px;text-align:center;font:600 12px Figtree,system-ui,sans-serif;color:var(--soft)}
 @keyframes float{50%{margin-top:-22px}}
 .marquee{border-block:1.5px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0;background:var(--card)}
 .marquee div{display:inline-block;animation:slide 30s linear infinite;font:800 clamp(18px,3vw,28px) Unbounded,sans-serif}
@@ -137,7 +137,7 @@ footer{text-align:center;color:var(--soft);font-size:14px;padding:0 0 40px}
   nav{padding:10px 16px}
   .wrap{padding:0 18px}
   .hero{min-height:auto;padding:112px 18px 44px}
-  .orb{top:8px;right:2px;width:88px;opacity:.95}
+  .orb{top:4px;bottom:auto;right:6px;width:64px;opacity:.9}
   .orb::after{inset:auto 0 -22px;font-size:12px}
   .status{font-size:14px}
   h1{font-size:clamp(30px,9.4vw,56px);margin:14px 0 16px}
